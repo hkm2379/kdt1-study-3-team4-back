@@ -18,23 +18,23 @@ services:
       - app
 
   server:
-    image: ghcr.io/cyu5733/kdt-study3-team4-back-server:latest
+    image: ghcr.io/silenc3502/backend-server:latest
     build: .
     container_name: backend-deploy-test-server
-volumes:
-  - appdata:/app
-  depends_on:
-    - db
-  ports:
-    - "7777:7777"
-  command:
-    - bash
-    - -c
-    - |
-      /wait-for-it.sh db:3306 -t 15
-      java -jar /app.jar
-  networks:
-    - app
+    volumes:
+      - appdata:/app
+    depends_on:
+      - db
+    ports:
+      - "7777:7777"
+    command:
+      - bash
+      - -c
+      - |
+        /wait-for-it.sh db:3306 -t 15
+        java -jar /app.jar
+    networks:
+      - app
 
 networks:
   app:
@@ -44,4 +44,4 @@ volumes:
   dbdata:
     driver: local
   appdata:
-  driver: local
+    driver: local
