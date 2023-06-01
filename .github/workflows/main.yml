@@ -8,7 +8,7 @@ on:
 env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/kdt1-study-3-team4-back
   VERSION: ${{ github.sha }}
-  NAME: backend-server
+  NAME: kdt1-study-3-team4-back
   
 jobs:
   build:
