@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      -main
+      - main
       
 env:
   DOCKER_IMAGE: ghcr.io/${{github.actor}}/kdt-study3-team4-back-server
