@@ -1,7 +1,6 @@
 package com.example.demo.product.service;
 
 import com.example.demo.Account.entity.Account;
-import com.example.demo.Account.entity.RoleType;
 import com.example.demo.Account.repository.AccountRepository;
 import com.example.demo.Account.repository.UserTokenRepository;
 import com.example.demo.Account.repository.UserTokenRepositoryImpl;
@@ -61,12 +60,13 @@ public class ProductServiceImpl implements ProductService {
                     String currentPath = System.getProperty("user.dir");
                     log.info(currentPath);
                     FileOutputStream writer =new FileOutputStream(
-                            "./demo/src/main/java/com/example/demo/UploadImgs/" +
+                            "./src/main/java/com/example/demo/UploadImgs/" +
                                     //"../../../Vue/YeoulCho/frontend/src/assets/uploadImgs" +
                                     multipartFile.getOriginalFilename()
                     );
                     //하드디스크에 multipartFile을 기록할꺼야 경로랑 가져온 이름으로
                     writer.write(multipartFile.getBytes());
+                    writer.flush();
                     //byte파일로 기록할꺼야
                     writer.close();
                     //기록 끝! 그만할꺼야
@@ -74,6 +74,7 @@ public class ProductServiceImpl implements ProductService {
                     //fileTest 엔티티에 파일정보를 저장하겠다
                     log.info(originalFileName);
                     imageRepository.save(image);
+
 
                 }
             }catch(FileNotFoundException e){
