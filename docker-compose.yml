@@ -18,7 +18,7 @@ services:
       - app
 
   server:
-    image: ghcr.io/yeoulcho/kdt1-study-3-team4-back:latest
+    image: ghcr.io/hkm2379/kdt1-study-3-team4-back:latest
     build: .
     container_name: kdt1-study3-team4-back
     volumes:
