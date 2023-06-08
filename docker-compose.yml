@@ -20,7 +20,7 @@ services:
   server:
     image: ghcr.io/hkm2379/kdt1-study-3-team4-back:latest
     build: .
-    container_name: kdt1-study3-team4-back
+    container_name: kdt1-study-3-team4-back
     volumes:
       - appdata:/app
     depends_on:
