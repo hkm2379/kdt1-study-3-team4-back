@@ -13,7 +13,8 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://127.0.0.1:8080",
                         "http://localhost:8080",
                         "http://15.165.209.91", //현기
-                        "http://43.201.44.74" //여울
+                        "http://43.201.44.74", //여울
+                        "http://15.164.206.68" //영재
                  )
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
     }
